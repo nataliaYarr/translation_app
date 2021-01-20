@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Type a word</h2>
+
+<input id="input">
+<button type="button" onclick="countVow()">Submit</button>
+<button type="button" onclick="resetCount()">Reset</button>
+
+<p id="count"></p>
+
+<script>
+
+function resetCount() {
+  let input = document.getElementById("input");
+  let count = document.getElementById("count");
+  input.value && count.innerHTML == "";
+}
+
+function countVow() {
+  let input, text;
+
+  input = document.getElementById("input").value;
+  let regex = /[aeiou]/gi;
+  let count = input.match(regex);
+  if (count) {
+    text = "vowels: " + count.length;
+  } 
+  else {
+    text = "no vowels";
+  } 
+  document.getElementById("count").innerHTML = text;
+}
+</script>
+
+</body>
+</html> 
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>challenge1</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input id="text" placeholder="Enter a word" 
+      type="text"/>
+      <br><br>
+      <button>Count vowels</button>
+      <br>
+      <p id="demo"></p>
+    </form>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>  -->
